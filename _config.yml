@@ -1,0 +1,21 @@
+# Site settings
+name: 一只特立独行的猪
+email: guanzhou.song@gmail.com
+author: Guanzhou Song
+url: https://github.com/GuanzhouSong/
+github: https://github.com/GuanzhouSong/
+baseurl: ""
+description: The Way I walked
+banner: 世上本没有路 走的人多了 也就成了路。
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: GuanzhouSong
+highlighter: rouge
+
+# Build settings
+markdown: kramdown
