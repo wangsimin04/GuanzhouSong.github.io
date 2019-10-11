@@ -25,7 +25,7 @@ however, because its branching factor, and hence the base of the logarithm that
 expresses its height, can be much larger. Therefore, we can also use B-trees to
 implement many dynamic-set operations in time O(lgn).
 
-![](/images/TIM截图20170911103821.png)
+![](/images/TIM_jietu_20170911103821.png)
 
 ### Definition of B-trees
 **minimum degree t**
@@ -39,14 +39,14 @@ may have at most 2t children. We say that a node is full if it contains exactly
 
 ### Basic operations on B-trees
 #### Searching a B-Tree
-![](/images/TIM截图20170911105343.png)
+![](/images/TIM_jietu_20170911105343.png)
 
 #### Insertion
 Before we can insert, we need to know how to split a full node:
 
-![](/images/TIM截图20170911105856.png)
+![](/images/TIM_jietu_20170911105856.png)
 
-![](/images/TIM截图20170911110013.png)
+![](/images/TIM_jietu_20170911110013.png)
 
 ![](/images/B_Tree_Insertion.png)
 
@@ -57,8 +57,8 @@ Before we can insert, we need to know how to split a full node:
 
 There are so many cases:
 
-![](/images/TIM截图20170911110750.png)
+![](/images/TIM_jietu_20170911110750.png)
 
-![](/images/TIM截图20170911110807.png)
+![](/images/TIM_jietu_20170911110807.png)
 
-![](/images/TIM截图20170911110822.png)
+![](/images/TIM_jietu_20170911110822.png)

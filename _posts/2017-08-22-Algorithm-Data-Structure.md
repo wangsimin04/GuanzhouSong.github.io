@@ -14,14 +14,14 @@ tag: 数据结构与算法
 # Data Structure
 ## Hash Tabls
 ### Direct-address Tables
-![](/images/TIM截图20170825111028.png)
+![](/images/TIM_jietu_20170825111028.png)
 
 To represent the dynamic set, we use an array, or direct-address table, denoted by T[o,…,m-1], in which each position, or slot, corresponds to a key in the universe U. So it's actually one-on-one and each slot can only contain one element.
 
 ### Hash Tables
 With hashing, this element is stored in slot h(k), that is, we use a hash function h to compute the slot from the key k. Here, h maps the universe U of keys into the slots of a hash table T(0,...,m-1) where the size m of the hash table is typically much less than |U|.
 
-![](/images/TIM截图20170825111508.png)
+![](/images/TIM_jietu_20170825111508.png)
 
 slot factor α = n/m which means expected length E[n<sub>h(k)</sub>] = α.
 
@@ -38,7 +38,7 @@ h(k) = k mod m
 But choosing m = 2<sup>p</sup> - 1 when k is a character string interpreted in radix 2p may be a poor choice, because permuting the characters of k does not change its hash value. An optimal choice is that we could choose m D 701 because it is a prime near 2000=3 but not near any power of 2.
 
 #### The multiplication method
-![](/images/TIM截图20170825134306.png)
+![](/images/TIM_jietu_20170825134306.png)
 
 The multiplication method for creating hash functions operates in two steps. First, we multiply the key k by a constant A in the range 0 < A < 1 and extract the fractional part of kA. Then, we multiply this value by m and take the floor of the
 result. In short, the hash function is
@@ -51,11 +51,11 @@ entry contains either an element of the dynamic set or NIL.
 
 The main advantage of open addressing is to avoid use of pointer all together so we can have more memory.
 
-![](/images/TIM截图20170825135053.png)
+![](/images/TIM_jietu_20170825135053.png)
 
 open addressing still use hash function, but when the index of h(x) is occupid, we do not create linked list for collision, but instead we move to the next index to see whether it's occupid until we meet a NIL and put the data into it.
 
-![](/images/TIM截图20170825135744.png)
+![](/images/TIM_jietu_20170825135744.png)
 
 Same thing with searching, we simply start searching from the index of h(x) until we meet the result(success) or the NIL/end of the array(fail).
 
@@ -68,18 +68,18 @@ attributes left, right, and p that point to the nodes corresponding to its left 
 ### Ordered Elements
 Since BST has already been sorted, we can easily print out all the elements in the BST in order.
 
-![](/images/TIM截图20170828162413.png)
+![](/images/TIM_jietu_20170828162413.png)
 
 Also searching the BST is easy, there are two ways to do so, iteration and recursion.
 
-![](/images/TIM截图20170828162550.png)
+![](/images/TIM_jietu_20170828162550.png)
 
-![](/images/TIM截图20170828162613.png)
+![](/images/TIM_jietu_20170828162613.png)
 
 ### Insertion
 Insertion can take O(lgn) time, you just need to search down until meet the proper place and insert the new node.
 
-![](/images/TIM截图20170828162947.png)
+![](/images/TIM_jietu_20170828162947.png)
 
 first using x and y to iterate down to find the "THE ONE" for our new node z. And when the loop ends, x is null and y is its parent. Finally we set z as y's child consider their relative value.
 
@@ -90,7 +90,7 @@ Here comes the most complicated problem, deletion, which you should consider sev
 2. **CASE 2**: If z has just one child, then we elevate that child to take z’s position in the tree by modifying z’s parent to replace z by z’s child.
 3. **CASE 3**: If z has two children, then we find z’s successor y—which must be in z’s right subtree—and have y take z’s position in the tree. The rest of z’s original right subtree becomes y’s new right subtree, and z’s left subtree becomes y’s new left subtree. This case is the tricky one because, as we shall see, it matters whether y is z’s right child.
 
-![](/images/TIM截图20170828164303.png)
+![](/images/TIM_jietu_20170828164303.png)
 
 ![](/images/BST-Deletion.png)
 
@@ -104,14 +104,14 @@ For **CASE 3**, first we find the minimum number at z.right, which we call it y,
 
 specifically, this process:
 
-![](/images/TIM截图20170828165123.png)
+![](/images/TIM_jietu_20170828165123.png)
 
 ## Augmenting Data Structures
 ### Order Statistic Tree
 In practice, we do not usually use the texybook algorithm, instead we will nees to improve, or augment some structure.
 First we learn an augmented red-black tree.
 
-![](/images/TIM截图20170831090821.png)
+![](/images/TIM_jietu_20170831090821.png)
 
 It's based on red-black tree and we add a size attribute into the node. This attribute contains the number of (internal) nodes in the subtree rooted at x (including x itself), that is, the size of the subtree. And we have:
 
@@ -119,17 +119,17 @@ x.size = x.left.size + x.right.size + 1
 
 The procedure OS-SELECT(x,i) returns a pointer to the node containing the i th smallest key in the subtree rooted at x. To find the node with the i th smallest key in an order-statistic tree T , we call OS-SELECT(t.root,i).
 
-![](/images/TIM截图20170831092105.png)
+![](/images/TIM_jietu_20170831092105.png)
 
 Given a pointer to a node x in an order-statistic tree T , the procedure OS-RANK returns the position of x in the linear order determined by an inorder tree walk of T .
 
-![](/images/TIM截图20170831092335.png)
+![](/images/TIM_jietu_20170831092335.png)
 
 It add all the left subtree prior to node x.
 
 In the mean time, we can tell that other operation should be slightly modified. For example the LEFT-ROTATE should also change node.size.
 
-![](/images/TIM截图20170831104538.png)
+![](/images/TIM_jietu_20170831104538.png)
 
 ### How to augment a datastructure
 
