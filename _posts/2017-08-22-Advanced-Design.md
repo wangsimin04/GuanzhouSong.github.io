@@ -31,9 +31,9 @@ We will follow this four steps to solve the Matrix-chain multiplication problem.
 #### Characterize the structure of an optimal solution
 To compute the matrix multiplication, say A<sub>ij</sub> and B<sub>jk</sub>, we need i*j*k time units. So Matrix-chain multiplication varies with order of multiplication.
 
-![](/images/Algorithm/TIM截图20170904171222.png)
+![](/images/Algorithm/TIM_jietu_20170904171222.png)
 
-![](/images/Algorithm/TIM截图20170904171928.png)
+![](/images/Algorithm/TIM_jietu_20170904171928.png)
 
 Now we use our optimal substructure to show that we can construct an optimal solution to the problem from optimal solutions to subproblems.
 
@@ -41,11 +41,11 @@ Now we use our optimal substructure to show that we can construct an optimal sol
 Let m(i,j) be the minimum number of scalar multiplications needed to compute the matrix A<sub>i…j</sub>; for the full problem, the lowestcost
 way to compute A<sub>i…n</sub> would thus be m(1,n).
 
-![](/images/TIM截图20170904172320.png)
+![](/images/TIM_jietu_20170904172320.png)
 
 It's almost the most important part to figure out the formula:
 
-![](/images/TIM截图20170905081600.png)
+![](/images/TIM_jietu_20170905081600.png)
 
 Only in this way can we preceed to wirthe the code for computing.
 
@@ -54,16 +54,16 @@ Now we konw the formula, and the code is writing itself.
 
 We will uses an auxiliary table m[1…n,1…n] for storing the m[i,j] costs and another auxiliary table s[1…n-121…n] that records which index of k achieved the optimal cost in computing m[i,j]. We shall use the table s to construct an optimal solution.
 
-![](/images/TIM截图20170905081804.png)
+![](/images/TIM_jietu_20170905081804.png)
 
 Then we can have a table keep the time units will be spent with different i and j.
 
-![](/images/TIM截图20170905082540.png)
+![](/images/TIM_jietu_20170905082540.png)
 
 #### Construct an optimal solution from computed information
 Finally, since we have table m and s, we can construct our solution:
 
-![](/images/TIM截图20170905083152.png)
+![](/images/TIM_jietu_20170905083152.png)
 
 ### When Can We use Dynamic Programming
 It's a great improvent if we implement dynamic programming, but when should we look for a dynamic-programming solution to a problem?
@@ -91,7 +91,7 @@ There are some cases we should not use dynamic programm.
 
 Here's an example.
 
-![](/images/TIM截图20170905090714.png)
+![](/images/TIM_jietu_20170905090714.png)
 
 The reason why dynamic programming doesn't work is that two subproblems are not independent. Independency mean that the solution to one subproblem does not affect the solution to another subproblem of the same problem.
 
@@ -123,10 +123,10 @@ Each subsequent time that we encounter this subproblem, we simply look up the
 value stored in the table and return it.
 
 Top-Down(Top elements first, recursive)
-![](/images/TIM截图20170905092852.png)
+![](/images/TIM_jietu_20170905092852.png)
 
 Bottom-up(Bottom elements first, iteration)
-![](/images/TIM截图20170905081804.png)
+![](/images/TIM_jietu_20170905081804.png)
 
 The main advantage of memouzation is that it only calculate the data we need, so for some problem that does not require all the data, it can save lots of time.
 
@@ -145,45 +145,45 @@ Given two sequences, X=<A,B,C,B,D,A,B>, Y=<B,D,C,A,B,A>, and <B,C,B,A>,<B,C,A,B>
 
 #### Step 1: Characterizing a longest common subsequence
 
-![](/images/TIM截图20170905093959.png)
+![](/images/TIM_jietu_20170905093959.png)
 
 #### Step 2: A recursive solution
 Let us define c[i,j] to be the length of an LCS of the sequences X<sub>i</sub> and Y<sub>j</sub>.
 
-![](/images/TIM截图20170905094123.png)
+![](/images/TIM_jietu_20170905094123.png)
 
 #### Step 3: Computing the length of an LCS
 
-![](/images/TIM截图20170905094957.png)
+![](/images/TIM_jietu_20170905094957.png)
 
 #### Step 4: Constructing an LCS
 
-![](/images/TIM截图20170905095211.png)
+![](/images/TIM_jietu_20170905095211.png)
 
-![](/images/TIM截图20170905095235.png)
+![](/images/TIM_jietu_20170905095235.png)
 
 ### Problems
 These problems might be helpful for better understanding
 
 #### Planning an investment strategy
 
-![](/images/TIM截图20170905095524.png)
+![](/images/TIM_jietu_20170905095524.png)
 
-![](/images/TIM截图20170905095731.png)
+![](/images/TIM_jietu_20170905095731.png)
 
 #### Inventory planning
 
-![](/images/TIM截图20170905095813.png)
+![](/images/TIM_jietu_20170905095813.png)
 
-![](/images/TIM截图20170905095839.png)
+![](/images/TIM_jietu_20170905095839.png)
 
 #### Signing free-agent baseball players
 
-![](/images/TIM截图20170905095922.png)
+![](/images/TIM_jietu_20170905095922.png)
 
-![](/images/TIM截图20170905095952.png)
+![](/images/TIM_jietu_20170905095952.png)
 
-![](/images/TIM截图20170905100010.png)
+![](/images/TIM_jietu_20170905100010.png)
 
 ## Amortized Analysis
 It's true that we can get worst running time by assuming the worst case, but often the case we don't meet the worst situation. So we need to use Amortized Analysis to compute the average running time.
@@ -233,8 +233,8 @@ For each i = 1,2,3,…,n, we let c<sub>i</sub> be the actual
 cost of the i th operation and D<sub>i</sub> be the data structure that results after applying
 the i th operation to data structure D<sub>i-1</sub>.
 
-![](/images/TIM截图20170908105820.png)
+![](/images/TIM_jietu_20170908105820.png)
 
-![](/images/TIM截图20170908110430.png)
+![](/images/TIM_jietu_20170908110430.png)
 
-![](/images/TIM截图20170908110454.png)
+![](/images/TIM_jietu_20170908110454.png)
