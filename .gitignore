@@ -1,3 +1,5 @@
 _site
 .sass-cache
 blog.bat
+.DS_Store
+.DS_Store
