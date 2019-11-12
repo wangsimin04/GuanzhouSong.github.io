@@ -4,3 +4,5 @@ blog.bat
 .DS_Store
 .DS_Store
 .DS_Store
+_posts/.idea/*
+.idea/*
